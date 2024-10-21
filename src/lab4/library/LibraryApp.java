@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 
 public class LibraryApp {
-
+/*
  private ArrayList<String> availableBooks = new ArrayList<>();
  private HashMap<String, ArrayList<String>> memberBorrowedBooks = new HashMap<>();
 
@@ -74,22 +74,22 @@ public void showMembers() {
        System.out.println(member);
    }
 }
-  
+ */ 
 public static void main(String[] args) {
 	
-	 LibraryApp library = new LibraryApp();
+	 Library library = new Library();
 
 	 System.out.println(" *** Library management system demo *** ");
 	 
     // Adding some books to the catalog
 	System.out.println("\n *** Adding \"Dune\" to the library:");
-	library.addBook("Dune");
+	library.addBook("Dune", "Frank Herbert");
 	
 	System.out.println("\n *** Adding \"1984\" to the library:");
-	library.addBook("1984"); 
+	library.addBook("1984", "George Orwell"); 
 	
 	System.out.println("\n *** Adding \"Moby Dick\" to the library:");
-    library.addBook("Moby Dick");
+    library.addBook("Moby Dick", "Herman Melville");
 
     // Show available books
     System.out.println("\n *** Show all books:");
