@@ -31,11 +31,11 @@ public class Book {
 		return isAvailable;
 	}
 
-	public void returnBook(){
+	public void returnBook(String title, String author){
 		this.isAvailable = true;
 	}
 
-	public void borrowBook(){
+	public void borrowBook(String title, String author){
 		this.isAvailable = false;
 	}
 }
