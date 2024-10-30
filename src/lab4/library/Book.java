@@ -27,7 +27,7 @@ public class Book {
 		return "Title: " + getTitle() + " Written by: " + getAuthor();
 	}
 
-	public boolean isAvailable(){
+	public boolean getAvailibility(){
 		return isAvailable;
 	}
 
@@ -38,4 +38,5 @@ public class Book {
 	public void borrowBook(){
 		this.isAvailable = false;
 	}
+	
 }
