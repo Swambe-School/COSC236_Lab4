@@ -1,8 +1,12 @@
 package lab4.library;
 
-public class Book {
+public class Book implements LibraryItem{
 
 	// GRASP Principle: Information Expert
+	/*
+	 * The Book Class Fulfills the Information Expert principle by containing all of its knowledge internally
+	 * and not directly interacting with any classes within its methods. It has no knowledge of the implementation of any other classes.
+	 */
 	// Manages its own state (available or borrowed).
 	private String title;
 	private String author;
@@ -15,27 +19,30 @@ public class Book {
 		this.isAvailable = true;
 	}
 
+	public String getAuthor(){
+		return author;
+	}
+	
+	@Override
 	public String getTitle(){
 		return title;
 	}
 
-	public String getAuthor(){
-		return author;
-	}
-
+	@Override
 	public String getInfo(){
 		return "Title: " + getTitle() + " Written by: " + getAuthor();
 	}
-
+	
+	@Override
 	public boolean getAvailibility(){
 		return isAvailable;
 	}
-
-	public void returnBook(){
+	@Override
+	public void returnItem(){
 		this.isAvailable = true;
 	}
-
-	public void borrowBook(){
+	@Override
+	public void borrow(){
 		this.isAvailable = false;
 	}
 	

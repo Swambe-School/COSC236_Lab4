@@ -2,29 +2,33 @@ package lab4.library;
 
 import java.util.HashSet;
 
-public class Library {
+public class Library <E>{
 	
 	//  GRASP Principles: Creator, Controller
 	//	Manage the catalog of books and members.
 	//	Track which books are borrowed and available
+	/*
+	 * The Library acts as a Creator by instantiating a list of books and members that its maintains throughout its life. It also calls
+	 * delegates the act of returning and borrowing book to the library controller class rather than interacting with them directly.
+	 */
 	
 	// Attributes:
 	// private catalog (list of Book) 
-	private HashSet<Book> listOfBooks;
+	private HashSet<LibraryItem> listOfItems;
 	// private members (list of Members)
 	private HashSet<Member> listOfMembers;
 	private LibrarianController lc;
 	
 	public Library() {
-		listOfBooks = new HashSet<>();
+		listOfItems = new HashSet<>();
 		listOfMembers = new HashSet<>();
 		lc = new LibrarianController(this);
 	}
 	
-	// TODO: implement functionality of Library class
+	// DONE: implement functionality of Library class
 	public void addBook(String title, String author) {
 		Book b = new Book(title, author);
-		listOfBooks.add(b);
+		listOfItems.add(b);
 	}
 	
 	public void addMember(String name) {
@@ -32,20 +36,20 @@ public class Library {
 		listOfMembers.add(m);
 	}
 
-	public void showAvailableBooks() {
-		listOfBooks.forEach(o1 -> {
+	public void showAvailableItems() {
+		listOfItems.forEach(o1 -> {
 			if(o1.getAvailibility()) {
 				System.out.println(o1.getInfo());
 			}
 		});
 	}
 	
-	public void borrowBook(String m, String n) {
-		lc.borrowBook(m, n);
+	public void borrowItem(String m, String n) {
+		lc.borrowItem(m, n);
 	}
 	
-	public void returnBook(String m, String n) {
-		lc.returnBook(m, n);
+	public void returnItem(String m, String n) {
+		lc.returnItem(m, n);
 	}
 	
 	public void showMembers() {
@@ -54,8 +58,8 @@ public class Library {
 		});
 	}
 	
-	public Book getBook(String title) {
-		for(Book b: listOfBooks) {
+	public LibraryItem getItem(String title) {
+		for(LibraryItem b: listOfItems) {
 			if(b.getTitle().equals(title)) {
 				return b;
 			}

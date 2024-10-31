@@ -8,12 +8,12 @@ import java.util.Scanner;
 
 public class LibraryApp {
 /*
- private ArrayList<String> availableBooks = new ArrayList<>();
+ private ArrayList<String> AvailableItems = new ArrayList<>();
  private HashMap<String, ArrayList<String>> memberBorrowedBooks = new HashMap<>();
 
  // Adds a book to the library catalog
  public void addBook(String bookName) {
-     availableBooks.add(bookName);
+     AvailableItems.add(bookName);
      System.out.println(bookName + " has been added to the catalog.");
  }
 
@@ -28,14 +28,14 @@ public class LibraryApp {
  }
 
  // Borrow a book from the library
- public void borrowBook(String bookName, String memberName) {
+ public void borrowItem(String bookName, String memberName) {
      if (!memberBorrowedBooks.containsKey(memberName)) {
          System.out.println("Member " + memberName + " not found.");
          return;
      }
 
-     if (availableBooks.contains(bookName)) {
-         availableBooks.remove(bookName);
+     if (AvailableItems.contains(bookName)) {
+         AvailableItems.remove(bookName);
          memberBorrowedBooks.get(memberName).add(bookName);
          System.out.println(memberName + " has successfully borrowed " + bookName);
      } else {
@@ -44,7 +44,7 @@ public class LibraryApp {
  }
 
  // Return a book to the library
- public void returnBook(String bookName, String memberName) {
+ public void returnItem(String bookName, String memberName) {
      if (!memberBorrowedBooks.containsKey(memberName)) {
          System.out.println("Member " + memberName + " not found.");
          return;
@@ -52,7 +52,7 @@ public class LibraryApp {
 
      if (memberBorrowedBooks.get(memberName).contains(bookName)) {
          memberBorrowedBooks.get(memberName).remove(bookName);
-         availableBooks.add(bookName);
+         AvailableItems.add(bookName);
          System.out.println(memberName + " has successfully returned " + bookName);
      } else {
          System.out.println(memberName + " didn't borrow " + bookName);
@@ -60,9 +60,9 @@ public class LibraryApp {
  }
 
  // Show the available books in the library
- public void showAvailableBooks() {
+ public void showAvailableItems() {
      System.out.println("Available Books:");
-     for (String book : availableBooks) {
+     for (String book : AvailableItems) {
          System.out.println(book);
      }
  }
@@ -93,7 +93,7 @@ public static void main(String[] args) {
 
     // Show available books
     System.out.println("\n *** Show all books:");
-    library.showAvailableBooks();
+    library.showAvailableItems();
     
     // Adding members
     System.out.println("\n *** Adding \"Alice\" to the library members");
@@ -108,40 +108,40 @@ public static void main(String[] args) {
     
     // Borrow a book
     System.out.println("\n *** Alice borrows Dune:");
-    library.borrowBook("Dune", "Alice");
+    library.borrowItem("Dune", "Alice");
 
     // Show available books after borrowing
     System.out.println("\n *** Show all books:");
-    library.showAvailableBooks();
+    library.showAvailableItems();
 
     System.out.println("\n *** Bob borrows 1984:");
-    library.borrowBook("1984", "Bob");
+    library.borrowItem("1984", "Bob");
     
     // Show available books after borrowing
     System.out.println("\n *** Show all books:");
-    library.showAvailableBooks();
+    library.showAvailableItems();
     
     System.out.println("\nBob borrows Dune:");
-    library.borrowBook("Dune", "Bob");
+    library.borrowItem("Dune", "Bob");
     
     // Show available books after borrowing
     System.out.println("\n *** Show all books:");
-    library.showAvailableBooks();
+    library.showAvailableItems();
     
     // Return a book
     System.out.println("\n *** Alice returns Dune:");
-    library.returnBook("Dune", "Alice");
+    library.returnItem("Dune", "Alice");
 
     // Show available books after returning
     System.out.println("\n *** Show all books:");
-    library.showAvailableBooks();
+    library.showAvailableItems();
 
     System.out.println("\n *** Bob borrows Dune:") ;
-    library.borrowBook("Dune", "Bob");
+    library.borrowItem("Dune", "Bob");
     
     // Show available books after borrowing
     System.out.println("\n *** Show all books:");
-    library.showAvailableBooks();
+    library.showAvailableItems();
 
 	}
 }
