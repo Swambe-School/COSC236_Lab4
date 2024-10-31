@@ -2,13 +2,13 @@ package lab4.library;
 
 import java.util.HashSet;
 
-public class Library <E>{
+public class Library{
 	
 	//  GRASP Principles: Creator, Controller
 	//	Manage the catalog of books and members.
 	//	Track which books are borrowed and available
 	/*
-	 * The Library acts as a Creator by instantiating a list of books and members that its maintains throughout its life. It also calls
+	 * The Library acts as a Creator by instantiating a list of items and members that its maintains throughout its life. It also calls
 	 * delegates the act of returning and borrowing book to the library controller class rather than interacting with them directly.
 	 */
 	

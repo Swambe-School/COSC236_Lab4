@@ -19,6 +19,7 @@ public class Book implements LibraryItem{
 		this.isAvailable = true;
 	}
 
+	@Override
 	public String getAuthor(){
 		return author;
 	}
