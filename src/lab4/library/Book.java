@@ -4,7 +4,7 @@ public class Book implements LibraryItem{
 
 	// GRASP Principle: Information Expert
 	/*
-	 * The Book Class Fulfills the Information Expert principle by containing all of its knowledge internally
+	 * The Book Class Fulfills the Information Expert principle by maintaining and updating all of its attributes internally
 	 * and not directly interacting with any classes within its methods. It has no knowledge of the implementation of any other classes.
 	 */
 	// Manages its own state (available or borrowed).
