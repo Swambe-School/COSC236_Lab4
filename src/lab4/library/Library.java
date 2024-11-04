@@ -44,12 +44,34 @@ public class Library{
 		});
 	}
 	
-	public void borrowItem(String m, String n) {
-		lc.borrowItem(m, n);
+	public void borrowItem(String b, String m) {
+		LibraryItem n = getItem(b);
+		Member p = getMember(m);
+		if(p == null) {
+			System.out.println(m + "is not a member of the library");
+			return;
+		}else if(n == null) {
+			System.out.println("The Library does not have " + b + " in stock.");
+		}else if(!n.getAvailibility()) {
+			System.out.println(n.getTitle() + " is not available for borrowing at this time.");
+		}else{
+			p.borrowBook(n);
+		}
 	}
 	
-	public void returnItem(String m, String n) {
-		lc.returnItem(m, n);
+	public void returnItem(String b, String m) {
+		LibraryItem n = getItem(b);
+		Member p = getMember(m);
+		if(p == null) {
+			System.out.println(m + "is not a member of the library");
+			return;
+		}else if(n == null) {
+			System.out.println("The Library does not have " + b + " in stock.");
+		}else if(!p.hasItem(n)) {
+			System.out.println("Member: "+ p.getName() + "has not borrowed " + n.getTitle() + ".");
+		}else{
+			p.returnItem(n);
+		}
 	}
 	
 	public void showMembers() {

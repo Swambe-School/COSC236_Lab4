@@ -15,34 +15,36 @@ public class LibrarianController {
 		this.l = l;
 	}
 	
-	// TODO: implement functionality of Member class
+	// DONE: implement functionality of Member class
 	public void borrowItem(String b, String m) {
-		LibraryItem n = l.getItem(b);
-		Member p = l.getMember(m);
-		if(p == null) {
-			System.out.println(m + "is not a member of the library");
-			return;
-		}else if(n == null) {
-			System.out.println("The Library does not have " + b + " in stock.");
-		}else if(!n.getAvailibility()) {
-			System.out.println(n.getTitle() + " is not available for borrowing at this time.");
-		}else{
-			p.borrowBook(n);
-		}
+		l.borrowItem(b, m);
+	}
+	
+	public void addBook(String title, String author) {
+		l.addBook(title, author);
+	}
+	
+	public void addMember(String name) {
+		l.addMember(name);
+	}
+	
+	public void showAvailableItems() {
+		l.showAvailableItems();
 	}
 	
 	public void returnItem(String b, String m) {
-		LibraryItem n = l.getItem(b);
-		Member p = l.getMember(m);
-		if(p == null) {
-			System.out.println(m + "is not a member of the library");
-			return;
-		}else if(n == null) {
-			System.out.println("The Library does not have " + b + " in stock.");
-		}else if(!p.hasItem(n)) {
-			System.out.println("Member: "+ p.getName() + "has not borrowed " + n.getTitle() + ".");
-		}else{
-			p.returnItem(n);
-		}
+		l.returnItem(b, m);
+	}
+	
+	public void getItem(String title) {
+		l.getItem(title);
+	}
+	
+	public void getMember(String name) {
+		l.getMember(name);
+	}
+	
+	public void showMembers() {
+		l.showMembers();
 	}
 }

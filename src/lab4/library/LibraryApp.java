@@ -71,7 +71,7 @@ public void showMembers() {
  */ 
 public static void main(String[] args) {
 	
-	 Library library = new Library();
+	 LibrarianController library = new LibrarianController(new Library());
 
 	 System.out.println(" *** Library management system demo *** ");
 	 
