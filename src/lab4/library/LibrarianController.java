@@ -6,8 +6,8 @@ public class LibrarianController {
 	// Handles user requests like borrowing and returning books.
 	// Delegates tasks to the appropriate objects.
 	/*
-	 * The LibrarianController class delegates the acts of flagging if a book or member are present in the library to the respective classes 
-	 * rather than directly modifying the internal attributes of the classes.
+	 * The LibrarianController class delegates the acts of borrowing, returning, and accessing records to the 
+	 * library class adhering to the Controller Principle by consolidating the main logic and delegating tasks accordingly.
 	 */
 	private Library l;
 	

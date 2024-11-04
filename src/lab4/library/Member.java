@@ -7,7 +7,7 @@ public class Member {
 // GRASP Principle: Information Expert and Low Coupling
 // Can borrow and return books.
 	/*
-	 * The Member class maintains all of it's own information and only interacts with the book class through message coupling
+	 * The Member class maintains all of it's own information and only interacts with the book class through message coupling, adhering to the Low Coupling Principle
 	 */
 
 private String name;
@@ -34,7 +34,7 @@ public void returnItem(LibraryItem b) {
 }
 
 public boolean hasItem(LibraryItem b) {
-return this.borrowedBooks.contains(b);
+	return this.borrowedBooks.contains(b);
 }
 
 public void getListOfItems() {

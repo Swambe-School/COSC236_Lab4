@@ -17,12 +17,10 @@ public class Library{
 	private HashSet<LibraryItem> listOfItems;
 	// private members (list of Members)
 	private HashSet<Member> listOfMembers;
-	private LibrarianController lc;
 	
 	public Library() {
 		listOfItems = new HashSet<>();
 		listOfMembers = new HashSet<>();
-		lc = new LibrarianController(this);
 	}
 	
 	// DONE: implement functionality of Library class
